@@ -1,0 +1,128 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	background-color: #0b2434;
+	padding: 20px;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-family: 'Oswald', sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 500;
+	overflow: hidden;
+}
+
+button {
+	font-family: inherit;
+}
+
+div#root {
+	height: 100%;
+	width: 100%;
+	max-height: 60vh;
+	max-width: 400px;
+}
+
+main {
+	background-color: #c9c9c9;
+	height: 100%;
+	border-radius: 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	row-gap: 30px;
+}
+
+.dices {
+	width: 100%;
+	display: grid;
+	padding-inline: 20px;
+	grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+
+	gap: 20px;
+}
+
+.die {
+	background-color: #f5f5f5;
+	border: none;
+	outline: none;
+	padding: 10px;
+	aspect-ratio: 1;
+	border-radius: 5px;
+
+	box-shadow: 2px 7px 7px -2px rgba(0, 0, 0, 0.15);
+	font-size: 1.2rem;
+	font-weight: 900;
+	cursor: pointer;
+	transition-duration: 0.3s;
+	&:active {
+		background-color: red;
+	}
+	&:hover {
+		translate: 0 -2px;
+	}
+}
+
+.reroll {
+	border: 1px solid lightblue;
+	background-color: fuchsia;
+	letter-spacing: 2px;
+	color: #f5f5f5;
+	font-size: 1.2rem;
+	transition-duration: 0.3s;
+	padding: 10px;
+	border-radius: 10px;
+	cursor: pointer;
+	&:hover {
+		background-color: rgb(216, 3, 216);
+	}
+	
+}
+
+.active {
+	background-color: rgb(43, 255, 0);
+}
+
+.focusedForNewGame{
+		box-shadow: 0px 0px 10px 9px rgb(30, 182, 0);
+		background-color: rgb(227, 228, 228);
+		color: #0b2434;
+}
+
+.title {
+	font-size: 40px;
+	margin: 0;
+}
+
+.instructions {
+	font-family: 'Inter', sans-serif;
+	font-weight: 400;
+	margin-top: 0;
+	text-align: center;
+}
+
+.jump {
+	animation: jump 1s infinite;
+
+	&:nth-child(odd) {
+		animation-delay: 0.2s;
+	}
+}
+
+@keyframes jump {
+	0% {
+		translate: 0 0;
+	}
+	50% {
+		translate: 0 5px;
+	}
+	100% {
+		translate: 0 0;
+	}
+}
